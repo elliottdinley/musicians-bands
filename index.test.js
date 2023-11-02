@@ -2,6 +2,10 @@ const { sequelize } = require('./db.js');
 
 const { Band, Musician, Song } = require('./index.js')
 
+beforeEach(async () => {
+	await sequelize.sync();
+});
+
 test('Can create a new Band', async () => {
     const newBand = await Band.create({ name: 'Test Band', genre: 'Test Genre' });
     expect(newBand.name).toBe('Test Band');
