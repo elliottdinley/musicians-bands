@@ -1,6 +1,6 @@
 const { sequelize } = require('./db.js');
 
-const { Band, Musician, Song } = require('./index.js')
+const { Band, Musician, Song } = require('./index.js');
 
 beforeEach(async () => {
 	await sequelize.sync();
